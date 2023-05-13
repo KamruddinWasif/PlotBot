@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 
 class OpenAIApiClient {
-    private let apiKey = "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"
+    private let apiKey = "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"
     
     func generateScript(prompts: [String], completion: @escaping (Result<String, AFError>) -> Void) {
         var previousResponses = [String]()
@@ -34,14 +34,15 @@ class OpenAIApiClient {
                     previousResponses.append(value.choices[0].text.trimmingCharacters(in: .whitespacesAndNewlines))
                 case .failure(let error):
                     completion(.failure(error))
+                    dispatchGroup.leave()
                     return
                 }
                 dispatchGroup.leave()
             }
-            
-            dispatchGroup.wait()
         }
         
-        completion(.success(previousResponses.last ?? ""))
+        dispatchGroup.notify(queue: .main) {
+            completion(.success(previousResponses.last ?? ""))
+        }
     }
 }
