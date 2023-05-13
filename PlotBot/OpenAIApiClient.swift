@@ -1,48 +1,29 @@
-import Foundation
 import Alamofire
+import Foundation
 
 class OpenAIApiClient {
-    private let apiKey = "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"
     
-    func generateScript(prompts: [String], completion: @escaping (Result<String, AFError>) -> Void) {
-        var previousResponses = [String]()
-        let dispatchGroup = DispatchGroup()
+    private let apiURL = "https://movie-script-generator.herokuapp.com/generate_script"
+    
+    func generateScript(prompts: [String], completion: @escaping (Result<String, Error>) -> Void) {
         
-        for prompt in prompts {
-            dispatchGroup.enter()
-            
-            let input = (previousResponses + [prompt]).joined(separator: "\n")
-            
-            let headers: HTTPHeaders = [
-                "Authorization": "Bearer \(apiKey)"
-            ]
-            
-            let parameters: [String: Any] = [
-                "model": "gpt-3.5-turbo",
-                "prompt": input,
-                "max_tokens": 500
-            ]
-            
-            AF.request("https://api.openai.com/v1/engines/davinci-codex/completions",
-                       method: .post,
-                       parameters: parameters,
-                       encoding: JSONEncoding.default,
-                       headers: headers)
-            .responseDecodable(of: OpenAIResponse.self) { response in
+        let concatenatedPrompts = prompts.joined(separator: "\n")
+        
+        AF.request(apiURL,
+                   method: .post,
+                   parameters: ["prompt": concatenatedPrompts],
+                   encoder: URLEncodedFormParameterEncoder.default)
+            .responseDecodable(of: ScriptResponse.self) { response in
                 switch response.result {
-                case .success(let value):
-                    previousResponses.append(value.choices[0].text.trimmingCharacters(in: .whitespacesAndNewlines))
+                case .success(let scriptResponse):
+                    completion(.success(scriptResponse.script))
                 case .failure(let error):
                     completion(.failure(error))
-                    dispatchGroup.leave()
-                    return
                 }
-                dispatchGroup.leave()
             }
-        }
-        
-        dispatchGroup.notify(queue: .main) {
-            completion(.success(previousResponses.last ?? ""))
-        }
     }
+}
+
+struct ScriptResponse: Decodable {
+    let script: String
 }

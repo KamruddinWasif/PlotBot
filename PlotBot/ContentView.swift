@@ -13,7 +13,7 @@ struct ContentView: View {
                 .fontWeight(.bold)
                 .padding(.bottom, 10)
             
-            TypewriterView(text: "An AI powered movie script generator.", speed: 0.1)
+            TypewriterView(text: "An AI powered movie script generator. Create your story now...", speed: 0.1)
                 .padding(.bottom, 30)
             
             Button(action: generateScript) {
@@ -45,35 +45,21 @@ struct ContentView: View {
     
     private func generateScript() {
         isLoading = true
-
-        let prompts1 = [
+        
+        let prompts = [
             "Could you give me 10 ideas for a feature film?",
             "Choose one of the 10 that you think is the best. Could you give me 10 ideas for that concept?",
-            "Which of these do you think would be most successful in the marketplace?"
-        ]
-
-        let prompts2 = [
+            "Which of these do you think would be most successful in the marketplace?",
             "Okay, please ask me ten questions that would help clarify our needs for this project.",
-            "Please provide the best possible answers to these questions"
-        ]
-        
-        let prompts3 = [
-            "Based on these answers please provide a compelling logline and outline for the movie along with a synopsis, structure, and detailed character descriptions making sure this movie feels completely original and incorporates all of the elements that would make for a great film.",
-            "Great now please please write the first entire scene of this movie including dialogue in proper movie script format."
-        ]
-
-        let prompts4 = [
+            "Please provide the best possible answers to these questions",
+            "Based on these answers please provide a compelling logline and outline for the movie along with a synopsis, structure, and detailed    character descriptions making sure this movie feels completely original and incorporates all of the elements that would make for a great film.",
+            "Great now please please write the first entire scene of this movie including dialogue in proper movie script format.",
             "Okay thanks, now please assume the persona of a major successful Hollywood producer who is extremely critical and generally pessimistic and critique our movie overall and scene 1.",
-            "Okay, based upon the feedback please add those elements and suggestions and rewrite scene 1 in movie script format."
-        ]
-        
-        let prompts5 = [
+            "Okay, based upon the feedback please add those elements and suggestions and rewrite scene 1 in movie script format.",
             "Okay now take on the persona of a successful Hollywood writer that has won academy awards for best screenplay who is asked to read the above scene and give feedback and criticism.",
             "Okay now please rewrite scene 1 based upon this feedback and suggestions and print out below the final logline followed by the final updated version of scene 1 in movie script format."
         ]
         
-        let prompts = prompts1 + prompts2 + prompts3 + prompts4 + prompts5
-
         OpenAIApiClient().generateScript(prompts: prompts) { result in
             DispatchQueue.main.async {
                 isLoading = false
@@ -86,8 +72,6 @@ struct ContentView: View {
                 }
             }
         }
-    }
-
     }
     
     struct ContentView_Previews: PreviewProvider {
@@ -129,3 +113,4 @@ struct ContentView: View {
             }
         }
     }
+}
