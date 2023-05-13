@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F92D8157DC99A764DFF1F3CA /* Pods_PlotBot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FA70D54A59626A4B62F68E9 /* Pods_PlotBot.framework */; };
 		FA630DD02A0BDF61008D4399 /* PlotBotApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA630DCF2A0BDF61008D4399 /* PlotBotApp.swift */; };
 		FA630DD22A0BDF61008D4399 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA630DD12A0BDF61008D4399 /* ContentView.swift */; };
 		FA630DD42A0BDF63008D4399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA630DD32A0BDF63008D4399 /* Assets.xcassets */; };
 		FA630DD72A0BDF63008D4399 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA630DD62A0BDF63008D4399 /* Preview Assets.xcassets */; };
+		FAC3D8812A0D16570056D7C8 /* OpenAIApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC3D8802A0D16570056D7C8 /* OpenAIApiClient.swift */; };
+		FAC797E82A0FAF16008D8BFE /* OpenAIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC797E72A0FAF16008D8BFE /* OpenAIResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FA70D54A59626A4B62F68E9 /* Pods_PlotBot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlotBot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E65027888D5829B3B54BA5F7 /* Pods-PlotBot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlotBot.release.xcconfig"; path = "Target Support Files/Pods-PlotBot/Pods-PlotBot.release.xcconfig"; sourceTree = "<group>"; };
+		E65D5271442D6F24CA52431F /* Pods-PlotBot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlotBot.debug.xcconfig"; path = "Target Support Files/Pods-PlotBot/Pods-PlotBot.debug.xcconfig"; sourceTree = "<group>"; };
 		FA630DCC2A0BDF61008D4399 /* PlotBot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlotBot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA630DCF2A0BDF61008D4399 /* PlotBotApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotBotApp.swift; sourceTree = "<group>"; };
 		FA630DD12A0BDF61008D4399 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA630DD32A0BDF63008D4399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA630DD62A0BDF63008D4399 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FAC3D8802A0D16570056D7C8 /* OpenAIApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIApiClient.swift; sourceTree = "<group>"; };
+		FAC797E72A0FAF16008D8BFE /* OpenAIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +34,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F92D8157DC99A764DFF1F3CA /* Pods_PlotBot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B9CF05FA47EBAF564D95DC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E65D5271442D6F24CA52431F /* Pods-PlotBot.debug.xcconfig */,
+				E65027888D5829B3B54BA5F7 /* Pods-PlotBot.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AED6AFAF1A2905738292EAB5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3FA70D54A59626A4B62F68E9 /* Pods_PlotBot.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA630DC32A0BDF60008D4399 = {
 			isa = PBXGroup;
 			children = (
 				FA630DCE2A0BDF61008D4399 /* PlotBot */,
 				FA630DCD2A0BDF61008D4399 /* Products */,
+				8B9CF05FA47EBAF564D95DC2 /* Pods */,
+				AED6AFAF1A2905738292EAB5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +81,8 @@
 			children = (
 				FA630DCF2A0BDF61008D4399 /* PlotBotApp.swift */,
 				FA630DD12A0BDF61008D4399 /* ContentView.swift */,
+				FAC3D8802A0D16570056D7C8 /* OpenAIApiClient.swift */,
+				FAC797E72A0FAF16008D8BFE /* OpenAIResponse.swift */,
 				FA630DD32A0BDF63008D4399 /* Assets.xcassets */,
 				FA630DD52A0BDF63008D4399 /* Preview Content */,
 			);
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA630DDA2A0BDF63008D4399 /* Build configuration list for PBXNativeTarget "PlotBot" */;
 			buildPhases = (
+				E0B8C81011A8009DB558BE99 /* [CP] Check Pods Manifest.lock */,
 				FA630DC82A0BDF61008D4399 /* Sources */,
 				FA630DC92A0BDF61008D4399 /* Frameworks */,
 				FA630DCA2A0BDF61008D4399 /* Resources */,
+				3D08DD5996CC7AB3395600FE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,12 +164,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3D08DD5996CC7AB3395600FE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlotBot/Pods-PlotBot-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlotBot/Pods-PlotBot-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlotBot/Pods-PlotBot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0B8C81011A8009DB558BE99 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlotBot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA630DC82A0BDF61008D4399 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAC3D8812A0D16570056D7C8 /* OpenAIApiClient.swift in Sources */,
 				FA630DD22A0BDF61008D4399 /* ContentView.swift in Sources */,
+				FAC797E82A0FAF16008D8BFE /* OpenAIResponse.swift in Sources */,
 				FA630DD02A0BDF61008D4399 /* PlotBotApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +337,7 @@
 		};
 		FA630DDB2A0BDF63008D4399 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E65D5271442D6F24CA52431F /* Pods-PlotBot.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -290,6 +367,7 @@
 		};
 		FA630DDC2A0BDF63008D4399 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E65027888D5829B3B54BA5F7 /* Pods-PlotBot.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
